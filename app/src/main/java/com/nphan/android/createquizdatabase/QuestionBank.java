@@ -20,12 +20,16 @@ public class QuestionBank {
 
     private QuestionBank(Context context) {
         mQuestions = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 5; i++) {
             Question question = new Question();
             question.setQuestionText("Question #" + i);
             question.setAnswer(i%4);
             mQuestions.add(question);
         }
+    }
+
+    public void addQuestion(Question q) {
+        mQuestions.add(q);
     }
 
     public List<Question> getQuestions() {
