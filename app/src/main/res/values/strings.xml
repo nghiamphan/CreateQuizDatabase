@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CreateQuizDatabase</string>
+    <string name="question_text_label">Question</string>
+    <string name="question_text_hint">Enter the question.</string>
+    <string name="option_A_text_label">A</string>
+    <string name="option_B_text_label">B</string>
+    <string name="option_C_text_label">C</string>
+    <string name="option_D_text_label">D</string>
+    <string name="correct_answer_label">Set a correct answer.</string>
+</resources>
