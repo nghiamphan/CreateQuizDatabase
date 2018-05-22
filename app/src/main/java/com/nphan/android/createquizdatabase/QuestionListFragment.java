@@ -72,7 +72,7 @@ public class QuestionListFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-            Intent intent = QuestionActivity.newIntent(getActivity(), mQuestion.getId());
+            Intent intent = QuestionPagerActivity.newIntent(getActivity(), mQuestion.getId());
             startActivity(intent);
         }
     }
