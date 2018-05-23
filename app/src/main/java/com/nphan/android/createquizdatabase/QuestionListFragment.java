@@ -76,6 +76,7 @@ public class QuestionListFragment extends Fragment {
             mQuestionRecyclerView.setAdapter(mAdapter);
         }
         else {
+            mAdapter.setQuestions(questions);
             mAdapter.notifyDataSetChanged();
         }
     }
@@ -131,6 +132,10 @@ public class QuestionListFragment extends Fragment {
         @Override
         public int getItemCount() {
             return mQuestions.size();
+        }
+
+        public void setQuestions(List<Question> questions) {
+            mQuestions = questions;
         }
     }
 }

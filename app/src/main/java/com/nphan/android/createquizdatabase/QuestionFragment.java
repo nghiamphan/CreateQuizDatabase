@@ -101,6 +101,13 @@ public class QuestionFragment extends Fragment {
         return v;
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        QuestionBank.get(getActivity()).updateQuestion(mQuestion);
+    }
+
     private void updateModelFromTextField(final EditText editText, final int viewId) {
         editText.addTextChangedListener(new TextWatcher() {
             @Override

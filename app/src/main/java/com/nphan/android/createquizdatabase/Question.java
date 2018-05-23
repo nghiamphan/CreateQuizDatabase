@@ -13,15 +13,15 @@ public class Question {
     private int mAnswer; // A:0, B:1, C:2, D:3
 
     public Question() {
-        mId = UUID.randomUUID();
+        this(UUID.randomUUID());
+    }
+
+    public Question(UUID id) {
+        mId = id;
     }
 
     public UUID getId() {
         return mId;
-    }
-
-    public void setId(UUID id) {
-        mId = id;
     }
 
     public String getQuestionText() {
