@@ -8,6 +8,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -46,6 +49,7 @@ public class QuestionFragment extends Fragment {
         Log.i("HIHQ", "onCreate");
         UUID questionId = (UUID) getArguments().getSerializable(ARG_QUESTION_ID);
         mQuestion = QuestionBank.get(getActivity()).getQuestion(questionId);
+        setHasOptionsMenu(true);
     }
 
     @Nullable
@@ -106,6 +110,24 @@ public class QuestionFragment extends Fragment {
         super.onPause();
 
         QuestionBank.get(getActivity()).updateQuestion(mQuestion);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.fragment_question, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.delete_question:
+                QuestionBank.get(getActivity()).deleteQuestion(mQuestion);
+                getActivity().finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private void updateModelFromTextField(final EditText editText, final int viewId) {

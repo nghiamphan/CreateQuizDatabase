@@ -8,4 +8,5 @@
     <string name="option_D_text_label">D</string>
     <string name="correct_answer_label">Set a correct answer.</string>
     <string name="new_question">New Question</string>
+    <string name="delete_question">Delete Question</string>
 </resources>

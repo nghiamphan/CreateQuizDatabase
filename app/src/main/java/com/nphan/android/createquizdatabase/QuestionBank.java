@@ -38,6 +38,12 @@ public class QuestionBank {
         mDatabase.insert(QuestionTable.NAME, null, values);
     }
 
+    public void deleteQuestion(Question q) {
+        mDatabase.delete(QuestionTable.NAME,
+                QuestionTable.Cols.UUID + " = ?",
+                new String[] {q.getId().toString()});
+    }
+
     public List<Question> getQuestions() {
         List<Question> questions = new ArrayList<>();
 
